@@ -7,8 +7,11 @@ if __name__ == '__main__':
     input_list = read_file('student_grades.xlsx')
 
     try:
-        # checks if the data have been read correctly. If not it raises DataReadingError
-        check_reading(input_list)
+        # checks if there is NaN in the data. If not it raises DataReadingError
+        check_if_nan(input_list)
+
+        # checks if the grades and weights are numbers. If not it raises DataReadingError
+        check_if_numbers(input_list)
 
         # checks if the sum of weights in each field is equal to 1. If not it raises IncorrectSumOfWeights error
         check_weights_sum(input_list)

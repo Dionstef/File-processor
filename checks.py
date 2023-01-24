@@ -31,9 +31,9 @@ def check_weights_sum(student_list):
     return True
 
 
-# Checks if the data have been read correctly
+# Checks if there is NaN value in the data
 # Input: list with dictionaries, Raises: DataReadingError If the test fails
-def check_reading(student_list):
+def check_if_nan(student_list):
     for student in student_list:
         for key, value in student.items():
 
@@ -56,5 +56,22 @@ def check_reading(student_list):
                 if np.isnan(value):
                     msg = f"ERROR: Nan value in line {student}"
                     raise DataReadingError(msg)
+
+    return True
+
+
+# Checks if the values of the grades and weights are numbers
+# Input: list with dictionaries, Raises: DataReadingError If the test fails
+def check_if_numbers(student_list):
+    for student in student_list:
+        for grade_value in student['grades'].values():
+            if type(grade_value) != int and type(grade_value) != float:
+                msg = f"ERROR: Wrong value in line {student['grades']}"
+                raise DataReadingError(msg)
+
+        for weight_value in student['weights'].values():
+            if type(weight_value) != int and type(weight_value) != float:
+                msg = f"ERROR: Wrong value in line {student['weights']}"
+                raise DataReadingError(msg)
 
     return True
