@@ -29,7 +29,7 @@ class Student:
 
     #  print object
     def __str__(self):
-        return self.name, self.class_name, self.get_weighted_average_grade()
+        return f'{self.name}'
 
 #  function for calculating the average of each class and each field.
 #  Input: list of students
