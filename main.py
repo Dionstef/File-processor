@@ -25,7 +25,7 @@ if __name__ == '__main__':
         # for each student print its name, class and average grade
         print('{:<12s}  {:<12s}  {:<12s}'.format('name ', 'class ', 'weighted average grade'))
         for student in student_list:
-            line_new = '{:<12s}  {:<12s}  {:<2.2f}'.format(student.name, student.class_name, student.get_weighted_average_grade())
+            line_new = '{:<12s}  {:<12s}  {:<2.2f}'.format(student)
             print(line_new)
 
         # calculate and print the average of each class and field

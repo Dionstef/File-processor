@@ -27,6 +27,10 @@ class Student:
 
         return average_grade
 
+    #  print object
+    def __str__(self):
+        return self.name, self.class_name, self.get_weighted_average_grade()
+
 #  function for calculating the average of each class and each field.
 #  Input: list of students
 #  Returns: 2 dictionaries with class and field (weighted) averages
@@ -36,12 +40,12 @@ def calculate_class_average(student_list):
     for student in student_list:
         if student.class_name not in class_averages:
             class_averages[student.class_name] = student.get_average_grade()
-        else: #if class already in dictionary, add the grade of the student
+        else:  # if class already in dictionary, add the grade of the student
             class_averages[student.class_name] += student.get_average_grade()
 
         if student.field not in field_averages:
             field_averages[student.field] = student.get_weighted_average_grade()
-        else: #if field already in dictionary, add the grade of the student
+        else:  # if field already in dictionary, add the grade of the student
             field_averages[student.field] += student.get_weighted_average_grade()
 
     # divide by the number of students in each class and field to get the average
