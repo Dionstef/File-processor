@@ -2,7 +2,7 @@ import pandas as pd
 
 
 # Function that calculates useful indices
-# Input: dataframe, Return:s number of courses, start_of_courses_col, end_of_data_col
+# Input: dataframe, Returns: number of courses, start_of_courses_col, end_of_data_col
 def calc_indices(df):
     n_courses = df.columns.get_loc("weights") - df.columns.get_loc(
         "grades") - 1  # finds number of courses
