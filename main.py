@@ -4,7 +4,7 @@ from checks import *
 
 if __name__ == '__main__':
     # read excel file into a list of dictionaries
-    input_list = read_file('student_grades.xlsx')
+    input_list = read_file_into_list('student_grades.xlsx')
 
     try:
         # checks if there is NaN in the data. If not it raises DataReadingError
